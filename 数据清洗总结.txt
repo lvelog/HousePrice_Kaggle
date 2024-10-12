@@ -1,0 +1,1044 @@
+
+Alley:
+房子路面的类型，Grvl碎石路,Pave铺砌路
+NaN     1369
+Grvl      50
+Pave      41
+删除
+
+LotShape:
+房子地块的形状,Reg规则的，IR不规则
+Reg    925
+IR1    484
+IR2     41
+IR3     10
+Name: count, dtype: int64
+删除
+
+LandContour:
+房子土地的平坦程度，Lvl平坦的地块,Bnk倾斜的地块，HLS高地，Low低洼地块
+Lvl    1311
+Bnk      63
+HLS      50
+Low      36
+Name: count, dtype: int64
+没有NaN,数据不均衡，是否影响有待考察
+删除
+
+Utilities:
+公用设施,AllPub什么都有水电天然气什么的，NoSeWa没有水和污水设施
+AllPub    1459
+NoSeWa       1
+Name: count, dtype: int64
+这个直接删w
+删除
+
+LotConfig:
+土地配置，他是在内部呢？还是在路口拐角，还是就是死胡同
+Inside内部地块Corner拐角地块CulDSac死胡同地块FR2两个前院FR3三个前院
+Inside     1052
+Corner      263
+CulDSac      94
+FR2          47
+FR3           4
+Name: count, dtype: int64
+没有NaN,复杂，有待考察
+删除
+
+LandSlope:
+房子坡度,Gtl轻微坡度，Mod中等，Sev陡坡
+Gtl    1382
+Mod      65
+Sev      13
+Name: count, dtype: int64
+考察
+删除
+
+Neighborhood:
+物理位置，是不是学区房，老城区等等等
+NAmes      225
+CollgCr    150
+OldTown    113
+Edwards    100
+Somerst     86
+Gilbert     79
+NridgHt     77
+Sawyer      74
+NWAmes      73
+SawyerW     59
+BrkSide     58
+Crawfor     51
+Mitchel     49
+NoRidge     41
+Timber      38
+IDOTRR      37
+ClearCr     28
+StoneBr     25
+SWISU       25
+MeadowV     17
+Blmngtn     17
+BrDale      16
+Veenker     11
+NPkVill      9
+Blueste      2
+Name: count, dtype: int64
+比较重要但是数据有点多
+保留
+
+Condition1:
+交通条件，是不是毗邻主干道，靠近铁路或者主要交通
+Norm      1260   正常
+Feedr       81    前道，接近主要交通道路的地方
+Artery      48    房产直接靠近主要干道，交通便利
+RRAn        26    位于主干道旁边，并靠近铁路，噪音可能较高
+PosN        19    房产位于良好的位置，可能是交通便利且环境较好的地区。
+RRAe        11    房产位于靠近铁路的良好位置，可能享受良好的交通便利，但也面临铁路带来的噪音。
+PosA         8    房产位于优越的地理位置，可能是市中心或其他优质区域。
+RRNn         5    房产位于远离铁路的主干道，通常环境较安静
+RRNe         2    房产在远离铁路的良好位置，通常具备较好的居住环境。
+Name: count, dtype: int64
+考虑合并，交通还是很重要，好的就是好的，坏就是怀
+删除
+
+Condition2:
+房屋数据集中与主要道路或铁路的相对位置的第二个条件
+Norm      1445
+Feedr        6
+Artery       2
+RRNn         2
+PosN         2
+PosA         1
+RRAn         1
+RRAe         1
+Name: count, dtype: int64
+合并就好
+删除
+
+BldgType：
+房子类型
+1Fam      1220          1Fam: 独立住宅（Single-Family Detached） - 独立的单户住宅，通常有自己的院子和空间。
+TwnhsE     114          TwnhsE: 端头联排别墅（End Unit Townhouse） - 联排别墅的末端单元，通常比中间单元有更多窗户和空间。
+Duplex      52          Duplex: 双拼住宅（Duplex） - 一栋建筑内有两个相邻的单元，通常具有独立的入口。
+Twnhs       43          Twnhs: 联排别墅（Townhouse） - 一系列相连的住宅，通常有多个楼层。
+2fmCon      31          2FmCon: 双户住宅（Two-Family Conversion） - 转换后的双户住宅，通常由两个家庭共同居住。
+Name: count, dtype: int64
+重要，先保留
+删除
+
+HouseStyle:
+房屋风格
+1Story    726           1Story: 单层住宅 - 只有一层的住宅，适合老年人或行动不便者，通常具有开放的布局。
+2Story    445           2Story: 两层住宅 - 有两层的住宅，通常有更多的卧室和生活空间。
+1.5Fin    154           1.5Story: 一层半住宅 - 一层加上一个阁楼或半层，通常提供额外的卧室空间。
+SLvl       65           SplitLevel: 分层级住宅 - 有多个不同的层级，通常设计为功能区分更明确的空间。
+SFoyer     37           SplitFoyer: 分层住宅 - 有两个不同的进入层次，通常在中间部分有一个台阶，上层和下层可以有不同的功能。
+1.5Unf     14           一层半的未完工住宅。
+2.5Unf     11           二层半的未完工住宅。
+2.5Fin      8           二层半住宅
+Name: count, dtype: int64
+重要
+保留
+
+OverallQual：
+房屋整体的材料和装饰质量 1-10评级
+5     397
+6     374
+7     319
+8     168
+4     116
+9      43
+3      20
+10     18
+2       3
+1       2
+Name: count, dtype: int64
+保留
+保留
+
+OverallCond:
+房屋整体的状况评分
+5    821
+6    252
+7    205
+8     72
+4     57
+3     25
+9     22
+2      5
+1      1
+Name: count, dtype: int64
+保留
+删除
+
+YearBuilt:
+建造时间
+2006    67
+2005    64
+2004    54
+2007    49
+2003    45
+        ..
+1875     1
+1911     1
+1917     1
+1872     1
+1905     1
+Name: count, Length: 112, dtype: int64
+太多了，而且与房屋评分冲突，先保留
+保留
+
+YearRemodAdd：
+翻修日期
+1950    178
+2006     97
+2007     76
+2005     73
+2004     62
+       ...
+2010      6
+1986      5
+1952      5
+1983      5
+1951      4
+Name: count, Length: 61, dtype: int64
+太多了，而且与房屋评分冲突，先保留
+保留
+
+RoofStyle:
+屋顶特征
+Gable      1141         Gable: 山墙屋顶（两侧呈三角形）
+Hip         286         Hip: 槽屋顶（四个斜面）
+Flat         13         平坦
+Gambrel      11         Gambrel: 拱形屋顶（类似于马厩屋顶，通常用于农舍）
+Mansard       7         Mansard: 法式屋顶（上部平坦，底部倾斜）
+Shed          2         Shed: 单坡屋顶
+Name: count, dtype: int64
+删，没评分有用
+删
+
+RoofMatl：
+建筑物屋顶所用材料
+CompShg    1434         CompShg: 复合材料（通常是由沥青制成的屋顶材料）
+Tar&Grv      11         Tar&Grv: 沥青和砾石
+WdShngl       6         WdShng: 木质屋顶材料（可能是木板或木片）
+WdShake       5         WdShake: 木质屋顶瓦（通常是木柴制成）
+Metal         1         Metal: 金属屋顶
+Membran       1         合成材料
+Roll          1         沥青橡胶
+ClyTile       1         ClyTile: 陶瓷瓦（如粘土瓦）
+Name: count, dtype: int64
+有用？
+删除
+
+Exterior1st:
+房子外面材料
+VinylSd    515          Vinyl Siding（塑料墙板）: 常见于现代住宅，耐用且易于维护。
+HdBoard    222
+MetalSd    220          Metal Siding（金属墙板）: 通常用于工业建筑或现代风格住宅，耐久且防火。
+Wd Sdng    206
+Plywood    108
+CemntBd     61
+BrkFace     50
+WdShing     26
+Stucco      25
+AsbShng     20
+BrkComm      2
+Stone        2
+AsphShn      1
+ImStucc      1
+CBlock       1
+Name: count, dtype: int64
+删
+删除
+
+Exterior2nd:
+
+VinylSd    504
+MetalSd    214
+HdBoard    207
+Wd Sdng    197
+Plywood    142
+CmentBd     60
+Wd Shng     38
+Stucco      26
+BrkFace     25
+AsbShng     20
+ImStucc     10
+Brk Cmn      7
+Stone        5
+AsphShn      3
+Other        1
+CBlock       1
+Name: count, dtype: int64
+删
+
+MasVnrType:
+屋外墙所使用的砖石饰面类型
+VinylSd    504
+MetalSd    214
+HdBoard    207
+Wd Sdng    197
+Plywood    142
+CmentBd     60
+Wd Shng     38
+Stucco      26
+BrkFace     25
+AsbShng     20
+ImStucc     10
+Brk Cmn      7
+Stone        5
+AsphShn      3
+Other        1
+CBlock       1
+Name: count, dtype: int64
+删
+
+MasVnrArea:
+masonry veneer（砌体面砖）在房屋中的面积的特征
+0.0      861
+NaN        8
+72.0       8
+108.0      8
+180.0      8
+        ...
+562.0      1
+89.0       1
+921.0      1
+762.0      1
+119.0      1
+Name: count, Length: 328, dtype: int64
+可保留，清Nan
+删除
+
+ExterQual:
+房屋外墙材料质量的特征
+TA    906           TA: Average/Typical（一般）
+Gd    488           Gd: Good（好）
+Ex     52           Ex: Excellent（优）
+Fa     14           Fa: Fair（较差）
+Name: count, dtype: int64
+先保留，优先级不高
+删除
+
+ExterCond:
+房屋外墙材料实际状况的特征
+TA    1282          TA: Average/Typical（一般）
+Gd     146          Gd: Good（好）
+Fa      28          Fa: Fair（较差）
+Ex       3          Ex: Excellent（优）
+Po       1          Po: Poor（差）
+Name: count, dtype: int64
+较单调，可删
+删除
+
+
+Foundation:
+房屋的地基类型
+PConc     647           Poured Concrete（浇筑混凝土）
+CBlock    634           CBlock: Cinder Block（混凝土砌块）
+BrkTil    146           BrkTil: Brick & Tile（砖和瓷砖基础）
+Slab       24           Slab: Slab（板式基础）
+Stone       6           Stone: Stone（石头基础）
+Wood        3           Wood: Wood（木质基础）
+Name: count, dtype: int64
+还可以
+删除
+
+BsmtQual:
+地下室的高度
+TA     649          TA (Typical/Average)：地下室的高度和质量处于平均水平，通常在6-7英尺（1.83-2.13米）
+Gd     618          Gd (Good)：地下室高度较高，通常在7-8英尺（2.13-2.44米）之间
+Ex     121          Ex (Excellent)：地下室高度非常高，通常超过8英尺（2.44米）
+NaN     37          NA：没有地下室。
+Fa      35          Fa (Fair)：地下室的高度和质量较低，通常在6英尺以下，不适合作为居住区。
+Name: count, dtype: int64
+不知道有咩有关系，看一下
+删除
+
+BsmtCond:
+地下室的整体状况或维护情况
+TA     1311         TA (Typical/Average)：地下室状况一般，存在一定的磨损或小的维修需求，但仍然可以正常使用。
+Gd       65
+Fa       45
+NaN      37
+Po        2
+Name: count, dtype: int64
+单调，可以删
+删除
+
+BsmtExposure:
+地下室墙壁的暴露程度
+No     953          No (No Exposure)：地下室没有窗户或门，完全位于地下，没有外部通风或采光。
+Av     221          Av (Average Exposure)：地下室有一些窗户，提供了适当的采光和通风，但可能没有步出式设计。
+Gd     134          Gd (Good Exposure)：地下室有较好的步出式设计，带有大窗户或直接通向户外的门，采光和通风都很好。
+Mn     114          Mn (Mimimum Exposure)：地下室有少量窗户，采光和通风效果较差，窗口面积有限。
+NaN     38          NA：没有地下室。
+Name: count, dtype: int64
+有待考量
+删除
+
+BsmtFinType1：
+地下室的装修区域的质量
+Unf    430          Unf (Unfinished)：未装修的地下室区域，通常用于存储或机械设备，不适合作为居住空间。
+GLQ    418          GLQ (Good Living Quarters)：高质量的居住区，地下室装修精美，可以用作正式的居住或活动空间。
+ALQ    220          ALQ (Average Living Quarters)：普通质量的居住区，装修质量尚可，适合居住或其他功能性用途。
+BLQ    148          BLQ (Below Average Living Quarters)：低于平均质量的居住区，装修简单，功能有限。
+Rec    133          Rec (Average Rec Room)：娱乐房间，适合非正式使用，通常用于游戏、娱乐等活动，但装修质量中等。
+LwQ     74          LwQ (Low Quality)：低质量的装修区，装修简陋，主要用于功能性用途，适合储藏或不经常使用的空间。
+NaN     37          NA：没有地下室。
+Name: count, dtype: int64
+有待考量
+删除
+
+BsmtFinType2:
+Unf    1256
+Rec      54
+LwQ      46
+NaN      38
+BLQ      33
+ALQ      19
+GLQ      14
+Name: count, dtype: int64
+合并
+删除
+
+BsmtFinSF1：
+地下室装修区域类型1的面积
+0       467
+24       12
+16        9
+686       5
+662       5
+       ...
+1338      1
+1324      1
+1460      1
+328       1
+830       1
+Name: count, Length: 637, dtype: int64
+保留
+删除
+
+BsmtFinSF2：
+地下室装修区域类型2的面积
+0       1293
+180        5
+374        3
+551        2
+147        2
+        ...
+532        1
+165        1
+1120       1
+311        1
+1029       1
+Name: count, Length: 144, dtype: int64
+保留
+删除
+
+BsmtUnfSF:
+地下室未装修的面积
+0       118
+728       9
+384       8
+600       7
+300       7
+       ...
+551       1
+1257      1
+605       1
+467       1
+136       1
+Name: count, Length: 780, dtype: int64
+保留
+删除
+
+TotalBsmtSF:
+房屋地下室的总面积
+0       37
+864     35
+672     17
+912     15
+1040    14
+        ..
+1838     1
+1581     1
+707      1
+611      1
+1542     1
+Name: count, Length: 721, dtype: int64
+保留
+删除
+
+Heating:
+房屋的供暖系统类型
+GasA     1428           表示屋顶阁楼中的天然气供暖系统。
+GasW       18           表示墙壁中的天然气供暖系统。
+Grav        7           表示使用碎石的供暖方式。这种供暖方式可能涉及使用碎石床（gravel bed）来进行地热供暖，
+Wall        4           墙暖
+OthW        2           其他
+Floor       1           地暖
+Name: count, dtype: int64
+考察
+保留
+
+HeatingQC:
+房屋的供暖系统的整体质量和状况
+Ex    741
+TA    428
+Gd    241
+Fa     49
+Po      1
+Name: count, dtype: int64
+这个更值得保留
+半留
+
+CentralAir:
+房屋是否配备中央空调系统
+Y    1365
+N      95
+Name: count, dtype: int64
+大空调保留吧
+保留
+
+Electrical：
+SBrkr    1334           SBrkr: 100 Amp Service
+FuseA      94           FuseA: Fuse Box (60 Amp)
+FuseF      27           FuseF: Fuse Box (100 Amp)
+FuseP       3           FuseP: Fuse Box (Other)
+Mix         1           Mix: Mixed (Some of the above)
+NaN         1
+Name: count, dtype: int64
+单调，可以混合一个
+删除
+
+1stFlrSF:
+房屋一楼的总建筑面积
+864     25
+1040    16
+912     14
+894     12
+848     12
+        ..
+1509     1
+2515     1
+605      1
+3138     1
+1256     1
+Name: count, Length: 753, dtype: int64
+保留
+保留
+
+2ndFlrSF:
+房屋二楼的总建筑面积
+0       829
+728      10
+504       9
+546       8
+672       8
+       ...
+1538      1
+914       1
+1067      1
+1000      1
+1152      1
+Name: count, Length: 417, dtype: int64
+保留
+保留
+
+LowQualFinSF：
+房屋中低质量装修的总面积
+0      1434
+80        3
+360       2
+205       1
+479       1
+397       1
+514       1
+120       1
+481       1
+232       1
+53        1
+515       1
+156       1
+473       1
+420       1
+390       1
+371       1
+392       1
+144       1
+572       1
+528       1
+234       1
+513       1
+384       1
+Name: count, dtype: int64
+保留
+
+GrLivArea:
+房屋在地面以上的可居住面积
+864     22
+1040    14
+894     11
+1456    10
+848     10
+        ..
+2296     1
+1123     1
+1199     1
+1473     1
+1256     1
+Name: count, Length: 861, dtype: int64
+保留
+保留
+
+BsmtFullBath:
+房屋地下室内的完整卫生间数量
+0    856
+1    588
+2     15
+3      1
+Name: count, dtype: int64
+保留吧看一看
+删除
+
+BsmtHalfBath：
+房屋地下室内的半卫生间数量
+0    1378
+1      80
+2       2
+Name: count, dtype: int64
+保留吧看一看
+删除
+
+FullBath:
+示房屋主层（地面以上）完整卫生间的数量
+2    768
+1    650
+3     33
+0      9
+Name: count, dtype: int64
+保留
+保留
+
+HalfBath：
+房屋主层（地面以上）半卫生间的数量
+2    768
+1    650
+3     33
+0      9
+Name: count, dtype: int64
+保留
+删除
+
+BedroomAbvGr:
+房屋中位于地下室以上的卧室数量
+3    804
+2    358
+4    213
+1     50
+5     21
+6      7
+0      6
+8      1
+Name: count, dtype: int64
+保留
+保留
+
+KitchenAbvGr：
+1    1392
+2      65
+3       2
+0       1
+Name: count, dtype: int64
+保留
+保留
+
+KitchenQual：
+厨房的质量
+TA    735
+Gd    586
+Ex    100
+Fa     39
+Name: count, dtype: int64
+看一看吧
+删除
+
+TotRmsAbvGrd:
+房屋中所有在地面以上的房间总数不包括浴室（如卫生间、全卫和半卫）
+6     402
+7     329
+5     275
+8     187
+4      97
+9      75
+10     47
+11     18
+3      17
+12     11
+2       1
+14      1
+Name: count, dtype: int64
+保留
+保留
+
+Functional:
+表示房屋的功能性评级，反映了房屋布局和设计的有效性。
+Typ     1360            Typ：功能正常，房屋布局合理。
+Min2      34            Min2：一般缺陷，需要一些改进或修改。
+Min1      31            Min1：轻微缺陷，可能需要小的改进。
+Mod       15            Mod：中等缺陷，可能会影响居住舒适度，建议进行较大的修改。
+Maj1      14            指房屋是否经历过重大翻新或更新
+Maj2       5
+Sev        1            Sev：严重缺陷，影响使用，可能需要重大的改建。
+Name: count, dtype: int64
+看一看考虑合并
+删除
+
+
+Fireplaces：
+表示房屋内的壁炉数量
+0    690
+1    650
+2    115
+3      5
+Name: count, dtype: int64
+保留，看一看
+保留
+
+
+FireplaceQu:
+特征表示房屋内壁炉的质量
+NaN    690
+Gd     380
+TA     313
+Fa      33
+Ex      24
+Po      20
+Name: count, dtype: int64
+看一看，删除
+删除
+
+GarageType:
+表示车库的位置，通常指车库是附加在房屋旁边
+Attchd     870          Attchd: Attached (附加车库)
+Detchd     387          Detchd: Detached (独立车库)
+BuiltIn     88          BuiltIn: Built-in (内置车库)
+NaN         81          NA: No garage (没有车库)
+Basment     19          Basment: Basement (地下车库)
+CarPort      9          CarPort: Carport (车棚)
+2Types       6          两种
+Name: count, dtype: int64
+看一看，考虑删除
+删除
+
+GarageYrBlt：
+车库建造的年份
+NaN       81
+2005.0    65
+2006.0    59
+2004.0    53
+2003.0    50
+          ..
+1927.0     1
+1900.0     1
+1906.0     1
+1908.0     1
+1933.0     1
+Name: count, Length: 98, dtype: int64
+删除
+删除
+
+GarageFinish:
+车库内部的装修状况
+Unf    605          Unf (未完工)：车库没有进行任何内部装修，可能仅为基础结构
+RFn    422          RFn (部分完工)：车库有部分装修，但可能存在未完成的区域或较低的装修质量。
+Fin    352          Fin (完工)：车库内部装饰完好，有足够的功能和美观性。
+NaN     81          NA (缺失)：没有车库，或者相关信息缺失。
+Name: count, dtype: int64
+删除
+删除
+
+GarageCars:
+车库能够容纳的汽车数量
+2    824
+1    369
+3    181
+0     81
+4      5
+Name: count, dtype: int64
+保留
+删除
+
+GarageArea:
+车库面积
+0      81
+440    49
+576    47
+240    38
+484    34
+       ..
+320     1
+594     1
+831     1
+878     1
+192     1
+Name: count, Length: 441, dtype: int64
+这个重要
+保留
+
+GarageQual：
+表示车库的质量
+TA     1311     TA (Typical/Average)：表示车库质量一般，材料和设施基本满足日常需求。
+NaN      81
+Fa       48
+Gd       14
+Ex        3
+Po        3
+Name: count, dtype: int64
+删了就完了
+删除
+
+GarageCond:
+特征表示车库的当前状况，反映了车库的维护水平
+TA     1326
+NaN      81
+Fa       35
+Gd        9
+Po        7
+Ex        2
+Name: count, dtype: int64
+删
+删除
+
+PavedDrive:
+表示房屋是否有铺砌的车道
+Y    1340
+N      90
+P      30
+Name: count, dtype: int64
+看一看
+删除
+
+WoodDeckSF:
+屋中木质甲板的面积
+0      761
+192     38
+100     36
+144     33
+120     31
+      ...
+326      1
+179      1
+103      1
+176      1
+736      1
+Name: count, Length: 274, dtype: int64
+保留吧看一看
+删除
+
+OpenPorchSF:
+表示房屋中开放式门廊的面积
+0      656
+36      29
+48      22
+20      21
+40      19
+      ...
+11       1
+523      1
+125      1
+137      1
+236      1
+Name: count, Length: 202, dtype: int64
+保留吧看一看
+删除
+
+EnclosedPorch：
+表示房屋中封闭式门廊的面积
+0      1252
+112      15
+96        6
+192       5
+144       5
+       ...
+54        1
+136       1
+148       1
+140       1
+99        1
+Name: count, Length: 120, dtype: int64
+保留吧看一看
+删除
+
+3SsnPorch：
+示房屋中三季门廊的面积
+0      1436
+168       3
+144       2
+180       2
+216       2
+290       1
+153       1
+96        1
+23        1
+162       1
+182       1
+196       1
+320       1
+245       1
+238       1
+508       1
+140       1
+130       1
+407       1
+304       1
+Name: count, dtype: int64
+保留吧看一看
+删除
+
+ScreenPorch:
+表示房屋中屏幕门廊的面积
+0      1344
+192       6
+120       5
+224       5
+189       4
+       ...
+291       1
+260       1
+385       1
+156       1
+40        1
+Name: count, Length: 76, dtype: int64
+保留吧看一看
+删除
+
+PoolArea:
+房屋中游泳池的面积
+0      1453
+512       1
+648       1
+576       1
+555       1
+480       1
+519       1
+738       1
+Name: count, dtype: int64
+删了吧，这个跟是不是别墅有关而且单调，或者改成有没有泳池
+删除
+
+PoolQC:
+表示游泳池的质量
+NaN    1453
+Gd        3
+Ex        2
+Fa        2
+Name: count, dtype: int64
+这个改成有没有泳池
+删除
+
+Fence:
+房产围栏的质量和状况
+NaN      1179
+MnPrv     157
+GdPrv      59
+GdWo       54
+MnWw       11
+Name: count, dtype: int64
+删
+删除
+
+MiscFeature:
+表示未被其他分类特征涵盖的附加特征或功能
+NaN     1406
+Shed      49            Shed: 小型工具房或储物棚。
+Gar2       2            Gar2: 额外的车库（通常是一个附加的车库或车位）。
+Othr       2
+TenC       1
+Name: count, dtype: int64
+删
+删除
+
+MiscVal:
+表示与 MiscFeature 相关的附加特征的货币价值
+0        1408
+400        11
+500         8
+700         5
+450         4
+600         4
+2000        4
+1200        2
+480         2
+15500       1
+800         1
+350         1
+3500        1
+1300        1
+54          1
+620         1
+560         1
+1400        1
+8300        1
+1150        1
+2500        1
+Name: count, dtype: int64
+删，有个待开发车库的地方值10000，建造要5W，坑
+删除
+
+MoSold: Month Sold
+房产销售的月份
+6     253
+7     234
+5     204
+4     141
+8     122
+3     106
+10     89
+11     79
+9      63
+12     59
+1      58
+2      52
+Name: count, dtype: int64
+没啥用，删
+删除
+
+YrSold:
+表示房产销售的年份
+2009    338
+2007    329
+2006    314
+2008    304
+2010    175
+Name: count, dtype: int64
+看一看删
+删除
+
+SaleType:
+房产交易的类型
+WD       1267
+New       122
+COD        43
+ConLD       9
+ConLI       5
+ConLw       5
+CWD         4
+Oth         3
+Con         2
+Name: count, dtype: int64
+看一看保留
+删除
+
+SaleCondition:
+房产交易的状态或条件
+Normal     1198         Normal: 正常销售，常规市场交易。
+Partial     125         Partial: 部分销售，可能是由于某种原因导致的交易。
+Abnorml     101         Abnorml: 非常规销售，如短售、财务困境下的销售。
+Family       20         Family: 亲属之间的销售，通常没有市场价格。
+Alloca       12         Alloca: 财产转让，通常与家庭继承或赠与有关。
+AdjLand       4         AdjLand: 邻近土地交易，通常指的是附带的土地。
+Name: count, dtype: int64
+挺重要
+保留
